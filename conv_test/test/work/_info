@@ -1,0 +1,157 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dG:/college/SOC/project/lab3
+vconv_buffer
+Z0 !s110 1680873221
+!i10b 1
+!s100 in[gEfK@8IiVZc4nXA3690
+IN3n00OdfWjaIzG4?@PH2]2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dG:/project/IC/CICC2023/CNN_FPGA/conv_test/test
+w1680763048
+8G:/project/IC/CICC2023/CNN_FPGA/CNN/conv_buffer.v
+FG:/project/IC/CICC2023/CNN_FPGA/CNN/conv_buffer.v
+L0 2
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1680873221.000000
+!s107 G:/project/IC/CICC2023/CNN_FPGA/CNN/conv_buffer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/project/IC/CICC2023/CNN_FPGA/CNN/conv_buffer.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vconv_cal
+R0
+!i10b 1
+!s100 =9?=f[k7_O7oPEY_HN8lD2
+IQOKaHd^;nZ1IF>hDo4`_a1
+R1
+R2
+Z7 w1661300958
+8G:/project/IC/CICC2023/CNN_FPGA/CNN/conv_cal.v
+FG:/project/IC/CICC2023/CNN_FPGA/CNN/conv_cal.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 G:/project/IC/CICC2023/CNN_FPGA/CNN/conv_cal.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/project/IC/CICC2023/CNN_FPGA/CNN/conv_cal.v|
+!i113 1
+R5
+R6
+vconv_search
+R0
+!i10b 1
+!s100 8M5::V@9?W2j2jSYW:1iX3
+IRK;8Z9h_?A=cYBT6liFGd3
+R1
+R2
+R7
+8G:/project/IC/CICC2023/CNN_FPGA/CNN/conv_search.v
+FG:/project/IC/CICC2023/CNN_FPGA/CNN/conv_search.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 G:/project/IC/CICC2023/CNN_FPGA/CNN/conv_search.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/project/IC/CICC2023/CNN_FPGA/CNN/conv_search.v|
+!i113 1
+R5
+R6
+vconv_top
+R0
+!i10b 1
+!s100 7JbGkWA[3@2YHacdOZUj72
+I9aIjb]UT9h;1JE4[dDIn>0
+R1
+R2
+R7
+8G:/project/IC/CICC2023/CNN_FPGA/CNN/conv_top.v
+FG:/project/IC/CICC2023/CNN_FPGA/CNN/conv_top.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 G:/project/IC/CICC2023/CNN_FPGA/CNN/conv_top.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/project/IC/CICC2023/CNN_FPGA/CNN/conv_top.v|
+!i113 1
+R5
+R6
+vconv_top_tb
+R0
+!i10b 1
+!s100 oZ8:Y^Wb_>34R9LzNAhOa0
+IgUdmTXNYcN6X>M:g1U1cL3
+R1
+R2
+w1680872109
+8G:/project/IC/CICC2023/CNN_FPGA/CNN/tb/conv_top_tb.v
+FG:/project/IC/CICC2023/CNN_FPGA/CNN/tb/conv_top_tb.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 G:/project/IC/CICC2023/CNN_FPGA/CNN/tb/conv_top_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/project/IC/CICC2023/CNN_FPGA/CNN/tb/conv_top_tb.v|
+!i113 1
+R5
+R6
+vmult_add
+R0
+!i10b 1
+!s100 I]DhGPb`A:4]A6kz5AZ@D3
+IGBVSUC]W`;WaRSibcH7nD1
+R1
+R2
+R7
+8G:/project/IC/CICC2023/CNN_FPGA/CNN/mult_add.v
+FG:/project/IC/CICC2023/CNN_FPGA/CNN/mult_add.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 G:/project/IC/CICC2023/CNN_FPGA/CNN/mult_add.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/project/IC/CICC2023/CNN_FPGA/CNN/mult_add.v|
+!i113 1
+R5
+R6
+vmult_add_gen
+R0
+!i10b 1
+!s100 R=TH0_igj[bGgRWhl6UG91
+IfO@d:]ZQoDDbIZ3l[OTVP2
+R1
+R2
+R7
+8G:/project/IC/CICC2023/CNN_FPGA/CNN/mult_add_gen.v
+FG:/project/IC/CICC2023/CNN_FPGA/CNN/mult_add_gen.v
+L0 19
+R3
+r1
+!s85 0
+31
+R4
+!s107 G:/project/IC/CICC2023/CNN_FPGA/CNN/mult_add_gen.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/project/IC/CICC2023/CNN_FPGA/CNN/mult_add_gen.v|
+!i113 1
+R5
+R6
