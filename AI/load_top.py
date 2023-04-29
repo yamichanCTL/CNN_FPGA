@@ -1,80 +1,33 @@
-import sys
-import onnx
-import load_test
-import onnxruntime as ort
-import cv2
+import torch
+import torch.nn as nn
 import numpy as np
+import cv2
+from yolo_load_model import *
+import sys
 
 # parameters
 CLASSES = ['stops', 'b', 'c', 'd','e']
 img_size = (640, 640)
-onnx_path = r'G:\project\IC\CICC2023\CNN_FPGA\AI\model\batch1_640_640.onnx'
+onnx_path = r'G:\project\IC\CICC2023\CNN_FPGA\AI\model\batch1_160_160.onnx'
 img_path = r'G:\project\IC\CICC2023\CNN_FPGA\AI\pic\daySequence1--00102.jpg'
-output_path = './pic/stop4.jpg'
+output_path = './pic/stop5.jpg'
 conf_thres = 0.5
 iou_thres = 0.5
 
-# load model
-class Yolov5ONNX(object):
-    def __init__(self, onnx_path):
-        """检查onnx模型并初始化onnx"""
-        onnx_model = onnx.load(onnx_path)
-        try:
-            onnx.checker.check_model(onnx_model)
-        except Exception:
-            print("Model incorrect")
-        else:
-            print("Model correct")
-
-        options = ort.SessionOptions()
-        options.enable_profiling = True
-        # 推理内核切换
-        # self.onnx_session = ort.InferenceSession(onnx_path, sess_options=options,
-        #                                          providers=['CUDAExecutionProvider', 'CPUExecutionProvider'])
-        self.onnx_session = ort.InferenceSession(onnx_path)
-        self.input_name = self.get_input_name()  # ['images']
-        self.output_name = self.get_output_name()  # ['output0']
-
-    def get_input_name(self):
-        """获取输入节点名称"""
-        input_name = []
-        for node in self.onnx_session.get_inputs():
-            input_name.append(node.name)
-
-        return input_name
-
-    def get_output_name(self):
-        """获取输出节点名称"""
-        output_name = []
-        for node in self.onnx_session.get_outputs():
-            output_name.append(node.name)
-
-        return output_name
-
-    def get_input_feed(self, image_numpy):
-        """获取输入numpy"""
-        input_feed = {}
-        for name in self.input_name:
-            input_feed[name] = image_numpy
-
-        return input_feed
-
-    def inference(self, img_path):
-        """ 1.cv2读取图像并resize
-        2.图像转BGR2RGB和HWC2CHW(因为yolov5的onnx模型输入为 RGB：1 × 3 × 640 × 640)
-        3.图像归一化
-        4.图像增加维度
-        5.onnx_session 推理 """
-        img = cv2.imread(img_path)
-        or_img = cv2.resize(img, img_size)  # resize后的原图 (640, 640, 3)
-        img = or_img[:, :, ::-1].transpose(2, 0, 1)  # BGR2RGB和HWC2CHW
-        img = img.astype(dtype=np.float32)  # onnx模型的类型是type: float32[ , , , ]
-        img /= 255.0
-        img = np.expand_dims(img, axis=0)  # [3, 640, 640]扩展为[1, 3, 640, 640]
-        # img尺寸(1, 3, 640, 640)
-        input_feed = self.get_input_feed(img)  # dict:{ input_name: input_value }
-        pred = self.onnx_session.run(None, input_feed)[0]  # <class 'numpy.ndarray'>(1, 25200, 9)
-        return pred, or_img
+# preprocess
+def inference(img_path):
+    """ 1.cv2读取图像并resize
+    2.图像转BGR2RGB和HWC2CHW(因为yolov5的onnx模型输入为 RGB：1 × 3 × 640 × 640)
+    3.图像归一化
+    4.图像增加维度
+    5.onnx_session 推理 """
+    img = cv2.imread(img_path)
+    or_img = cv2.resize(img, img_size)  # resize后的原图 (640, 640, 3)
+    img = or_img[:, :, ::-1].transpose(2, 0, 1)  # BGR2RGB和HWC2CHW
+    img = img.astype(dtype=np.float32)  # onnx模型的类型是type: float32[ , , , ]
+    img /= 255.0
+    img = np.expand_dims(img, axis=0)  # [3, 640, 640]扩展为[1, 3, 640, 640]
+    return img, or_img
 
 # 过滤掉无用的框
 def filter_box(org_box, conf_thres, iou_thres):
@@ -89,7 +42,6 @@ def filter_box(org_box, conf_thres, iou_thres):
     box = org_box[conf == True]  # 根据objectness score生成(n, 10)，只留下符合要求的框
     print('box:符合要求的框')
     print(box.shape)
-    print(box)
 
     # 3.通过argmax获取置信度最大的类别index
     cls_cinf = box[..., 5:]  # 左闭右开，就只剩下了每个grid cell中各类别的概率
@@ -194,22 +146,24 @@ def draw(image, box_data):
     return image
 
 if __name__ == "__main__":
-    model = Yolov5ONNX(onnx_path)
-    output, or_img = model.inference(img_path)
+    img, or_img = inference(img_path)
+    img = torch.from_numpy(img)
+
+    output= net(img).detach().numpy()
     # print(output)
     # print('pred: 位置[0, 0, :]的数组')
     # print(output.shape) # 输出数据是 (1, 25200, 4+1+class)：4+1+class 是检测框的坐标、大小 和 分数。
     # print(output[0, 0, :])
 
-    # # result extract
-    # outbox = filter_box(output, conf_thres, iou_thres)  # 最终剩下的Anchors：0 1 2 3 4 5 分别是 x1 y1 x2 y2 score class
-    # print('outbox( x1 y1 x2 y2 score class):')
-    # print(outbox)
-    # if len(outbox) == 0:
-    #     print('没有发现物体')
-    #     sys.exit(0)
-    #
-    # # show and save
-    # or_img = draw(or_img, outbox)
-    # cv2.imwrite(output_path, or_img)
+    # result extract
+    outbox = filter_box(output, conf_thres, iou_thres)  # 最终剩下的Anchors：0 1 2 3 4 5 分别是 x1 y1 x2 y2 score class
+    print('outbox( x1 y1 x2 y2 score class):')
+    print(outbox)
+    if len(outbox) == 0:
+        print('没有发现物体')
+        sys.exit(0)
+
+    # show and save
+    or_img = draw(or_img, outbox)
+    cv2.imwrite(output_path, or_img)
 
