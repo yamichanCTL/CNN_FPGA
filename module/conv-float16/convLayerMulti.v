@@ -3,11 +3,11 @@
 module convLayerMulti(clk,reset,image,filters,outputConv);
 
 parameter DATA_WIDTH = 16;
-parameter D = 1; //Depth of image and filter
-parameter H = 32; //Height of image
-parameter W = 32; //Width of image
-parameter F = 5; //Size of filter
-parameter K = 6; //Number of filters applied
+parameter D = 64; //Depth of image and filter
+parameter H = 160; //Height of image
+parameter W = 160; //Width of image
+parameter F = 1; //Size of filter
+parameter K = 64; //Number of filters applied
 
 input clk, reset;
 input [0:D*H*W*DATA_WIDTH-1] image;

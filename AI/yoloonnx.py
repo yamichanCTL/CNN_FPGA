@@ -1,6 +1,6 @@
 import sys
 import onnx
-import load_test
+import onnx_extract
 import onnxruntime as ort
 import cv2
 import numpy as np
@@ -12,7 +12,8 @@ onnx_path = r'G:\project\IC\CICC2023\CNN_FPGA\AI\model\batch1_640_640.onnx'
 img_path = r'G:\project\IC\CICC2023\CNN_FPGA\AI\pic\daySequence1--00102.jpg'
 output_path = './pic/stop4.jpg'
 conf_thres = 0.5
-iou_thres = 0.5
+iou_thres = 0.8
+
 
 # load model
 class Yolov5ONNX(object):
@@ -33,7 +34,7 @@ class Yolov5ONNX(object):
         #                                          providers=['CUDAExecutionProvider', 'CPUExecutionProvider'])
         self.onnx_session = ort.InferenceSession(onnx_path)
         self.input_name = self.get_input_name()  # ['images']
-        self.output_name = self.get_output_name()  # ['output0']
+        # self.output_name = self.get_output_name()  # ['output0']
 
     def get_input_name(self):
         """获取输入节点名称"""
@@ -87,9 +88,9 @@ def filter_box(org_box, conf_thres, iou_thres):
     # […,4]：代表了取最里边一层的所有第4号元素，…代表了对:,:,:,等所有的的省略。此处生成：25200个第四号元素组成的数组
     conf = org_box[..., 4] > conf_thres  # 0 1 2 3 4 4是置信度，只要置信度 > conf_thres 的
     box = org_box[conf == True]  # 根据objectness score生成(n, 10)，只留下符合要求的框
-    print('box:符合要求的框')
-    print(box.shape)
-    print(box)
+    # print('box:符合要求的框')
+    # print(box.shape)
+    # print(box)
 
     # 3.通过argmax获取置信度最大的类别index
     cls_cinf = box[..., 5:]  # 左闭右开，就只剩下了每个grid cell中各类别的概率
@@ -196,20 +197,20 @@ def draw(image, box_data):
 if __name__ == "__main__":
     model = Yolov5ONNX(onnx_path)
     output, or_img = model.inference(img_path)
-    # print(output)
+    print(output.shape)
     # print('pred: 位置[0, 0, :]的数组')
     # print(output.shape) # 输出数据是 (1, 25200, 4+1+class)：4+1+class 是检测框的坐标、大小 和 分数。
     # print(output[0, 0, :])
 
-    # # result extract
-    # outbox = filter_box(output, conf_thres, iou_thres)  # 最终剩下的Anchors：0 1 2 3 4 5 分别是 x1 y1 x2 y2 score class
-    # print('outbox( x1 y1 x2 y2 score class):')
-    # print(outbox)
-    # if len(outbox) == 0:
-    #     print('没有发现物体')
-    #     sys.exit(0)
-    #
-    # # show and save
-    # or_img = draw(or_img, outbox)
-    # cv2.imwrite(output_path, or_img)
+    # result extract
+    outbox = filter_box(output, conf_thres, iou_thres)  # 最终剩下的Anchors：0 1 2 3 4 5 分别是 x1 y1 x2 y2 score class
+    print('outbox( x1 y1 x2 y2 score class):')
+    print(outbox)
+    if len(outbox) == 0:
+        print('没有发现物体')
+        sys.exit(0)
+
+    # show and save
+    or_img = draw(or_img, outbox)
+    cv2.imwrite(output_path, or_img)
 

@@ -9,8 +9,8 @@ import numpy as np
 img_size = (160, 160)
 img_path = r'.\pic\daySequence1--00102.jpg'
 output_path = './pic/stop3.jpg'
-weight_path = r'G:\project\IC\CICC2023\CNN_FPGA\AI\parameters\model.0.conv.weight.npy'
-bias_path = r'G:\project\IC\CICC2023\CNN_FPGA\AI\parameters\model.0.conv.bias.npy'
+weight_path = r'.\parameters\model.2.cv3.conv.weight.npy'
+bias_path = r'.\parameters\model.2.cv3.conv.bias.npy'
 
 
 def inference(img_path):
@@ -31,15 +31,14 @@ def inference(img_path):
 class CSM(nn.Module):
     def __init__(self):
         super(CSM, self).__init__()
-        self.conv = nn.Conv2d(1, 1, kernel_size=6, stride=2, padding=2)
+        self.conv = nn.Conv2d(1, 1, kernel_size=1, stride=1, padding=0)
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):
         conv_out = self.conv(x)
         sigmoid_out = self.sigmoid(conv_out)
-        mul_out = conv_out
-        return conv_out, sigmoid_out, mul_out
-
+        mul_out = conv_out*sigmoid_out
+        return mul_out
 
 if __name__ == "__main__":
     img = inference(img_path)
@@ -50,13 +49,12 @@ if __name__ == "__main__":
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     net = CSM().to(device)
     # 权重偏差赋值
-    weight = np.load(r'G:\project\IC\CICC2023\CNN_FPGA\AI\parameters\model.0.conv.weight.npy').astype(np.float32)
-    weight = torch.from_numpy(weight)
+    weight = torch.from_numpy(np.load(weight_path).astype(np.float32))
     bias = torch.from_numpy(np.load(bias_path).astype(np.float32))
     #bias = torch.from_numpy(bias)
 
     net.conv.weight.data = weight
     net.conv.bias.data = bias
 
-    conv_out, sigmoid_out, mul_out = net(img)
-    print(conv_out.shape, sigmoid_out.shape, mul_out.shape)
+    mul_out = net.forward(img)
+    print(mul_out.shape)

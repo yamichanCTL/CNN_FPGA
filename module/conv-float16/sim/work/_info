@@ -1,0 +1,207 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dE:/quartus/modelsim_ase/win32aloem
+vconvLayerMulti
+Z0 !s110 1683114054
+!i10b 1
+!s100 92J3z8cWZ1RaQ8K6]bmMB3
+I<TZ;Qi:aG840zHJ75ldbk2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dG:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/sim
+w1683105005
+8G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convLayerMulti.v
+FG:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convLayerMulti.v
+L0 3
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1683114053.000000
+!s107 G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convLayerMulti.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convLayerMulti.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+nconv@layer@multi
+vconvLayerMulti_TB
+R0
+!i10b 1
+!s100 eNLQ<F?`_id10>FKK:DNe0
+ID3az>Fao58D6`@X6gL?iF1
+R1
+R2
+w1683113936
+8G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/conv-float16-test.v
+FG:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/conv-float16-test.v
+L0 3
+R3
+r1
+!s85 0
+31
+Z7 !s108 1683114054.000000
+!s107 G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/conv-float16-test.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/conv-float16-test.v|
+!i113 1
+R5
+R6
+nconv@layer@multi_@t@b
+vconvLayerSingle
+R0
+!i10b 1
+!s100 5EQ=2]ETmT_RDJhf5n5h02
+IV_XoR6D5;d[aB0U@a=WfH0
+R1
+R2
+Z8 w1613711044
+8G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convLayerSingle.v
+FG:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convLayerSingle.v
+L0 3
+R3
+r1
+!s85 0
+31
+R7
+!s107 G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convLayerSingle.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convLayerSingle.v|
+!i113 1
+R5
+R6
+nconv@layer@single
+vconvUnit
+R0
+!i10b 1
+!s100 [bJSlFCPF5^[lcW8g88701
+I[kzURjJAjPW>JHSlmH9??0
+R1
+R2
+w1683040808
+8G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convUnit.v
+FG:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convUnit.v
+L0 3
+R3
+r1
+!s85 0
+31
+R7
+!s107 G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convUnit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convUnit.v|
+!i113 1
+R5
+R6
+nconv@unit
+vfloatAdd16
+R0
+!i10b 1
+!s100 K>aoaDR@dGGcTFkToPeK33
+ISbVFSidOP]@h6PTE>8ATX0
+R1
+R2
+R8
+8G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/floatAdd16.v
+FG:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/floatAdd16.v
+L0 3
+R3
+r1
+!s85 0
+31
+R7
+!s107 G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/floatAdd16.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/floatAdd16.v|
+!i113 1
+R5
+R6
+nfloat@add16
+vfloatMult16
+Z9 !s110 1683114053
+!i10b 1
+!s100 F3h=1FDdNe[S=5W00oSVJ3
+IfFGDg[eEmaOS61e<2d=j13
+R1
+R2
+R8
+8G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/floatMult16.v
+FG:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/floatMult16.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/floatMult16.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/floatMult16.v|
+!i113 1
+R5
+R6
+nfloat@mult16
+vprocessingElement16
+R9
+!i10b 1
+!s100 F6E]`;S5QN3C9gOczkW`L2
+I55DPkG<63<HWVl5aV4S^f2
+R1
+R2
+R8
+8G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/processingElement16.v
+FG:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/processingElement16.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/processingElement16.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/processingElement16.v|
+!i113 1
+R5
+R6
+nprocessing@element16
+vread_bin_file
+R9
+!i10b 1
+!s100 cKG:EhzLAFXd:D2SHje]91
+IkoCFMP68_djI4:4UokjM03
+R1
+R2
+w1683112299
+8G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/read_bin.v
+FG:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/read_bin.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/read_bin.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/read_bin.v|
+!i113 1
+R5
+R6
+vRFselector
+R9
+!i10b 1
+!s100 bBH;Wk<80Q0dMHZl8mL8g2
+I<o2dB5=E_MkmDijjj3G=z2
+R1
+R2
+w1681132900
+8G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/RFselector.v
+FG:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/RFselector.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/RFselector.v|
+!s90 -reportprogress|300|-work|work|-stats=none|G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/RFselector.v|
+!i113 1
+R5
+R6
+n@r@fselector

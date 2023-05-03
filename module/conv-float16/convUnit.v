@@ -1,10 +1,15 @@
 `timescale 100 ns / 10 ps
 
-module convUnit(clk,reset,image,filter,result);
+module convUnit#(
+	parameter DATA_WIDTH = 16,
+	parameter D = 1,
+	parameter F = 5
+	)
+	(clk,reset,image,filter,result);
 
-parameter DATA_WIDTH = 16;
-parameter D = 1; //depth of the filter
-parameter F = 5; //size of the filter
+//parameter DATA_WIDTH = 16;
+//parameter D = 1; //depth of the filter
+//parameter F = 5; //size of the filter
 
 input clk, reset;
 input [0:D*F*F*DATA_WIDTH-1] image, filter;
