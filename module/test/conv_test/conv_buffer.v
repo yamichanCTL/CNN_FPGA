@@ -1,4 +1,3 @@
-// data preprocess
 module conv_buffer #(
     parameter weight_width = 2,         
     parameter weight_height = 2,       
@@ -20,13 +19,13 @@ module conv_buffer #(
     input conv_on,
     
     input [31:0] anchor_l,
-    input [31:0] anchor_c,
+    input [31:0] anchor_c,// 定位坐标，用于定位待卷积数据的输入起始位置
 
     input [3:0] buf_l,
-    input [3:0] buf_c,
+    input [3:0] buf_c,//缓冲区数据检索地址
 
-    input [img_width*img_height*bitwidth-1:0]  img,         //图像
-    input [weight_width*weight_height*bitwidth-1:0] weight,//权重
+    input [img_width*img_height*bitwidth-1:0]  img,         //
+    input [weight_width*weight_height*bitwidth-1:0] weight,//
 
     output [bitwidth-1:0] img_cal,
     output [bitwidth-1:0] wei_cal
@@ -34,8 +33,7 @@ module conv_buffer #(
 
 
 reg [bitwidth-1:0] img_buffer [0:weight_width-1][0:weight_height];
-reg [weight_height:0] i;
-reg [weight_width:0] j;
+reg [3:0] i,j;
 always@(posedge clk_en)begin
     if(!rst_n)begin
         for(i=0;i<weight_height;i=i+1)begin
@@ -46,8 +44,8 @@ always@(posedge clk_en)begin
     end
     else begin
         if(conv_on)begin
-            for(i=0;i<img_height;i=i+1)begin
-                for(j=0;j<img_width;j=j+1)begin
+            for(i=0;i<weight_height;i=i+1)begin
+                for(j=0;j<weight_width;j=j+1)begin
                     if (padding_enable) begin
                         if((anchor_l+i)<padding|(anchor_l+i)>img_height|(anchor_c+j)<padding|(anchor_c+j)>img_width)begin
                             img_buffer[i][j]=0;
@@ -56,7 +54,6 @@ always@(posedge clk_en)begin
                         img_buffer[i][j]=img[((anchor_l+i-padding)*img_width+(anchor_c-padding+j))*bitwidth +:bitwidth];
                         end
                     end
-                    // no padding
                     else begin
                         img_buffer[i][j]=img[((anchor_l+i)*img_width+(anchor_c+j))*bitwidth +:bitwidth];
                     end

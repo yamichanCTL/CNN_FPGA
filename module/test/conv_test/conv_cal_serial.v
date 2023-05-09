@@ -17,7 +17,7 @@ module conv_cal #(
            input clk_en,
            input rst_n,
            input conv_on,
-           input srh_fin,
+           input srh_fin,//search out
 
            input chge_rlt,
            input chge_rlt_q,
