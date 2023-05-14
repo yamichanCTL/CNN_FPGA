@@ -18,7 +18,7 @@ module processingElement16#(
 	//output reg [EXP-1:0] i//count of multi and add
 	);
 
-localparam EXP = 5; //2^EXP==WEIGHT_WIDTH^2
+localparam EXP = 7; //2^EXP==WEIGHT_WIDTH^2
 wire [data_width-1:0] multResult;
 wire [data_width-1:0] addResult;
 //integer i;

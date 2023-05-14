@@ -1,4 +1,3 @@
-// savedata in addr
 module conv_buffer #(
     parameter weight_width = 2,         
     parameter weight_height = 2,       
@@ -25,8 +24,8 @@ module conv_buffer #(
     input [3:0] buf_l,
     input [3:0] buf_c,
 
-    input [img_width*img_height*bitwidth-1:0]  img,         //图像
-    input [weight_width*weight_height*bitwidth-1:0] weight,//权重
+    input [img_width*img_height*bitwidth-1:0]  img,         //鍥惧儚
+    input [weight_width*weight_height*bitwidth-1:0] weight,//鏉冮噸
 
     output [bitwidth-1:0] img_cal,
     output [bitwidth-1:0] wei_cal
@@ -34,8 +33,7 @@ module conv_buffer #(
 
 
 reg [bitwidth-1:0] img_buffer [0:weight_width-1][0:weight_height];
-reg [weight_height:0] i;
-reg [weight_width:0] j;
+reg [3:0] i,j;
 always@(posedge clk_en)begin
     if(!rst_n)begin
         for(i=0;i<weight_height;i=i+1)begin

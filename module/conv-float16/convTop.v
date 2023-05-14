@@ -21,7 +21,6 @@ module conv_top #(
     input reset,   
     input conv_en,              //if 1,the conv is on
 
-
     input [0:input_channel*image_width*image_length*data_width-1]image,  
     input [0:output_channel*input_channel*weight_width*weight_length*data_width-1] weight, 
     input [0:output_channel*data_width-1] bias,                              
@@ -31,16 +30,16 @@ module conv_top #(
 );
 
 //controller
-wire [data_width-1:0]archor_2D;   //the addr of the top left point
-wire [data_width-1:0]archor_1D;
+wire [data_width-1:0]anchor_2D;   //the addr of the top left point
+wire [data_width-1:0]anchor_1D;
 
 //buffer
 wire [0:input_channel*weight_length*weight_width*data_width-1] img_cal;        //the data for calcualtion
 wire [0:input_channel*weight_length*weight_width*data_width-1] wei_cal;
 wire [data_width-1:0] rlt_cal;
 
-wire chge_rlt;                      //change the addr of the result array
-wire chge_rlt_q;                    //delay a clk
+wire cu_conv_en;                      //change the addr of the result array
+wire cu_out_valid;                    //delay a clk
 
 //controller block
 conv_controller#(
@@ -63,9 +62,11 @@ conv_controller#(
     .clk     (clk),
     .reset      (reset),
     .conv_en    (conv_en),
+    .cu_out_valid(cu_out_valid),
 
-    .archor_1D(archor_1D),
-    .archor_2D(archor_2D)
+    .anchor_1D(anchor_1D),
+    .anchor_2D(anchor_2D),
+    .cu_conv_en(cu_conv_en)
 );
 
 //buffer block
@@ -93,11 +94,11 @@ convBuffer #(
     .image   (image),
     .weight   (weight),
 
-    .archor_2D      (archor_2D),
-    .archor_1D      (archor_1D),
+    .anchor_2D      (anchor_2D),
+    .anchor_1D      (anchor_1D),
 
     .img_cal    (img_cal),
-    .wei_cal    (wei_cal)
+    .weight_cal    (wei_cal)
 );
 
 //cu block
@@ -116,40 +117,27 @@ convUnit#(
     .cu_out_valid(cu_out_valid)
     );
 
-integer i,j,k,l;
+reg [data_width-1:0]i;
 always @(posedge clk,negedge reset) begin
     if(!reset)begin
-		for(i=0;i<output_channel;i=i+1)begin
-			for(j=0;j<result_width;j=j+1)begin
-				for(k=0;k<result_length;k=k+1)begin
-					result<=0;
-                    out_valid<=0;
-				end
-			end
-		end
+		result<=0;
+        out_valid<=0;
+        i<=0;
     end
-    else if(cu_out_valid) begin
-        for(i=0;i<output_channel;i=i+1)begin
-			for(j=0;j<result_width;j=j+1)begin
-				for(k=0;k<result_length;k=k+1)begin
-					result[i*result_width*result_length*data_width
-                    +j*result_length*data_width
-                    +k*data_width
-                    +:data_width]<=rlt_cal;
-                    out_valid<=((i==output_channel-1)&(j==result_width-1)&(k==result_length-1))?1:0;
-				end
-			end
-		end
+    else if(cu_out_valid & i<output_channel*result_length*result_width-1) begin
+        result[i*data_width+:data_width]<=rlt_cal;
+        out_valid<=0;
+        i<=i+1;
+    end
+    else if(i==output_channel*result_length*result_width-1) begin
+        result[i*data_width+:data_width]<=rlt_cal;
+        out_valid<=1;
+        i<=0;
     end
     else begin
-        for(i=0;i<output_channel;i=i+1)begin
-            for(j=0;j<result_width;j=j+1)begin
-                for(k=0;k<result_length;k=k+1)begin
-                    result<=0;
-                    out_valid<=0;
-                end
-            end
-        end
+        result<=0;
+        out_valid<=0;
+        i<=0;
     end
 end
 endmodule

@@ -1,6 +1,6 @@
 `timescale 100 ns / 10 ps
 
-module convBuffer_TB #(
+module convTop_TB #(
 	parameter data_width = 16,
 	parameter input_channel = 1,
 	parameter image_length = 4,
@@ -21,9 +21,10 @@ module convBuffer_TB #(
 );
 reg clk, reset,conv_en;
 reg [0:input_channel*image_length*image_width*data_width-1] image;
-reg [0:input_channel*weight_length*weight_width*data_width-1] weight; 
-reg [data_width-1:0]archor_2D,archor_1D;
-wire [0:input_channel*weight_length*weight_width*data_width-1] img_cal,weight_cal;
+reg [0:output_channel*input_channel*weight_length*weight_width*data_width-1] weight; 
+reg [0:output_channel*data_width-1]bias;
+wire [0:output_channel*input_channel*weight_length*weight_width*data_width-1] result;
+wire out_valid;
 
 localparam PERIOD = 2;
 
@@ -32,28 +33,19 @@ always
 
 initial begin
 	#0
-	clk = 1'b0;reset = 1;conv_en = 0;archor_1D = 0;archor_2D = 0;
+	clk = 1'b0;reset = 1;conv_en = 0;
 	// We test with an image part and a filter whose values are all 4 
 
 //1 channel
 	image =  256'h3C003C003C003C00_3C003C003C003C00_3C003C003C003C00_3C003C003C003C00;
 	weight = 144'h3C003C003C00_3C003C003C00_3C003C003C00;
+	bias = 16'h3c00;
 
  //2channel 
 	//image =  512'h3C003C003C003C00_3C003C003C003C00_3C003C003C003C00_3C003C003C003C00_4000400040004000_3C003C003C003C00_3C003C003C003C00_3C003C003C003C00;
 	//weight = 288'h3C003C003C00_3C003C003C00_3C003C003C00_400040004000_3C003C003C00_3C003C003C00;
 	
 	#2 reset = 0;conv_en = 1;
-	#2 
-	archor_1D = 1;archor_2D = 0;
-	#2 
-	archor_1D = 2;archor_2D = 0;
-	#2 
-	archor_1D = 3;archor_2D = 0;
-	#2 
-	archor_1D = 4;archor_2D = 0;
-	#2 
-	archor_1D = 5;archor_2D = 0;
 /*
 	#10 
 	image =  512'h4000400040004000_4000400040004000_4000400040004000_4000400040004000_4000400040004000_4000400040004000_4000400040004000_4000400040004000;
@@ -61,7 +53,7 @@ initial begin
 	*/
 end
 
-convBuffer 
+conv_top 
 #(
 	.data_width(data_width),
 	.input_channel(input_channel),
@@ -79,17 +71,15 @@ convBuffer
     .padding_en(padding_en),
     .padding(padding)
 )
-BUFFER
+conv_top_inst
 (
 	.clk(clk),
 	.reset(reset),
 	.image(image),
 	.conv_en(conv_en),
 	.weight(weight),
-	.archor_1D(archor_1D),
-	.archor_2D(archor_2D),
-    .img_cal(img_cal),
-    .weight_cal(weight_cal)
+    .result(result),
+    .out_valid(out_valid)
 );
 
 endmodule

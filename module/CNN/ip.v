@@ -1,4 +1,4 @@
-// Created by IP Generator (Version 2022.1 build 99559)
+// Created by IP Generator (Version 2020.3 build 62942)
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -15,7 +15,7 @@
 // Library:
 // Filename:ipml_multadd.v
 //////////////////////////////////////////////////////////////////////////////
-    module ipml_multadd_v1_1_mult_add
+    module ipml_multadd_v1_1_mult_add_gen
 #(  
     parameter   ASIZE           = 54,
     parameter   BSIZE           = 27,

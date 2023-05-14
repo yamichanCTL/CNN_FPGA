@@ -18,53 +18,62 @@ module conv_controller#(
 	input clk,
 	input reset,
 	input conv_en,
-	input [0:input_channel*image_length*image_width*data_width-1] image,
-	input [0:input_channel*weight_length*weight_width*data_width-1] weight,
+    input cu_out_valid,
 
-	output reg [data_width-1:0]anchor_1D,
-	output reg [data_width-1:0]anchor_2D
+	output reg [data_width-1:0]anchor_1D,//anchor<(size+2p-w)/stride
+	output reg [data_width-1:0]anchor_2D,
+    output reg cu_conv_en
 	//output reg cb_valid
 	);
 
 
 //search the addr of the top left point
-reg [data_width-1:0] ranchor_l;
-reg [data_width-1:0] ranchor_c;
-assign anchor_l=ranchor_l;
-assign anchor_c=ranchor_c;
-always@(posedge clk)begin
+//reg [data_width-1:0] ranchor_l;
+//reg [data_width-1:0] ranchor_c;
+
+//reg slide_1D;
+
+always@(posedge clk,negedge reset)begin
     if(!reset)begin
-        ranchor_l<=0;
-        ranchor_c<=0;
+        anchor_1D<=0;
+        anchor_2D<=0;
+        cu_conv_en<=0;
     end
     else begin
         if(conv_en)begin
-            if(keep_buf)begin
-                ranchor_l<=ranchor_l;
-                ranchor_c<=ranchor_c;
+            if(!cu_out_valid)begin
+                anchor_1D<=anchor_1D;
+                anchor_2D<=anchor_2D;
+                cu_conv_en<=1;
             end
             else begin
-                if(~chge_buf&chge_buf_q&chge_rlt_l)begin
-                    ranchor_l<=ranchor_l+stride;
-                    ranchor_c<=0;
+                //slide in column
+                if(anchor_1D<image_length+2*padding-weight_length)begin
+                    anchor_1D<=anchor_1D+stride;
+                    anchor_2D<=0;
+                    cu_conv_en<=1;
                 end
-                else if(~chge_buf&chge_buf_q&!chge_rlt_l)begin
-                    ranchor_l<=ranchor_l;
-                    ranchor_c<=ranchor_c+stride;
+                //slide to colunmn end
+                else if(anchor_1D==image_length+2*padding-weight_length & anchor_2D<image_width+2*padding-weight_width)begin
+                    anchor_1D<=0;
+                    anchor_2D<=anchor_2D+stride;
+                    cu_conv_en<=1;
                 end
-                else if(chge_buf&~chge_buf_q&!chge_rlt_l)begin
-                    ranchor_l<=ranchor_l;
-                    ranchor_c<=ranchor_c;
-                end
+                /*else if(anchor_2D==image_length+2*padding-weight_length)begin
+                    anchor_1D<=0;
+                    anchor_2D<=0;
+                end*/
                 else begin
-                    ranchor_l<=ranchor_l;
-                    ranchor_c<=ranchor_c;
+                    anchor_1D<=0;
+                    anchor_2D<=0;
+                    cu_conv_en<=0;
                 end
             end
         end
         else begin
-            ranchor_l<=0;
-            ranchor_c<=0;
+            anchor_1D<=0;
+            anchor_2D<=0;
+            cu_conv_en<=0;
         end
     end
 end
