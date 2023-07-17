@@ -1,0 +1,37 @@
+# Written on 24/06/2021   14:34:28
+
+##### DESIGN INFO ########################################################
+
+Top Module:              "DDR_HDMI_Loop_Demo"
+Constraint File(s):      E:/Demo_Project/DDR_HDMI_Loop_Demo/DDR_HDMI_Loop_Demo.fdc
+                         
+##### SUMMARY ############################################################
+
+Found 0 error(s), 0 critical_warning(s), 21 warning(s).
+
+##### DETAILS ############################################################
+
+
+W: ConstraintEditor-2002: "IO Table" row:1 | Port o_ddr3_dq[15] has been placed at location M1, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:2 | Port o_ddr3_dq[14] has been placed at location P3, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:3 | Port o_ddr3_dq[13] has been placed at location M2, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:102 | Port i_hdmi1_data[19] has been placed at location Y8, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:103 | Port i_hdmi1_data[18] has been placed at location W9, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:104 | Port i_hdmi1_data[17] has been placed at location AB6, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:105 | Port i_hdmi1_data[16] has been placed at location AA6, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:116 | Port i_hdmi1_data[5] has been placed at location AB5, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:117 | Port i_hdmi1_data[4] has been placed at location Y5, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:120 | Port i_hdmi1_data[1] has been placed at location U6, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:121 | Port i_hdmi1_data[0] has been placed at location T7, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:136 | Port i_hdmi2_data[9] has been placed at location T21, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:137 | Port i_hdmi2_data[8] has been placed at location R22, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:138 | Port i_hdmi2_data[7] has been placed at location R20, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:139 | Port i_hdmi2_data[6] has been placed at location P22, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:140 | Port i_hdmi2_data[5] has been placed at location P21, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:141 | Port i_hdmi2_data[4] has been placed at location N22, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:142 | Port i_hdmi2_data[3] has been placed at location N20, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:143 | Port i_hdmi2_data[2] has been placed at location M22, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:144 | Port i_hdmi2_data[1] has been placed at location M21, whose type is share pin.
+W: ConstraintEditor-2002: "IO Table" row:172 | Port i_hdmi1_clk has been placed at location AA12, whose type is share pin.
+
+

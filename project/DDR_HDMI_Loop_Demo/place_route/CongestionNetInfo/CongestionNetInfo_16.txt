@@ -1,0 +1,67 @@
+congestion value : 7, drive info : SRB_112_144:ZQW[3], design net name : DDR3_Interface_Inst/DDR3_Inst/ddr_rstn
+congestion value : 4, drive info : CLMS_34_153:Y3, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].u_ddrphy_data_slice/data_slice_dqs_gate_cal/gatecal/N327
+congestion value : 4, drive info : CLMS_114_165:Y3, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_ui_axi/u_user_cmd_fifo/N14
+congestion value : 4, drive info : CLMA_154_172:Y1, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst2/fifo_wr_rst
+congestion value : 3, drive info : CLMS_150_173:Y2, design net name : DDR3_Interface_Inst/DDR_Arbitration_WR_Ctrl_Inst/_N9455
+congestion value : 2, drive info : CLMA_30_129:Q0, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].u_ddrphy_data_slice/dqsi_rdel_cal/state_reg [8]
+congestion value : 2, drive info : CLMA_90_120:Q0, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_dcp_top/mcdq_dcp_back_ctrl/PRE_PASS_LOOP[6].timing_pre_pass/timing_cnt1 [2]
+congestion value : 2, drive info : CLMA_114_176:Q3, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_ui_axi/u_user_cmd_fifo/rptr
+congestion value : 2, drive info : CLMA_154_169:Y3, design net name : DDR3_Interface_Inst/DDR_Arbitration_WR_Ctrl_Inst/_N9466
+congestion value : 1, drive info : SRB_116_156:ZQS[3], design net name : DDR3_Interface_Inst/DDR_Arbitration_WR_Ctrl_Inst/_N9455
+congestion value : 1, drive info : CLMA_38_164:Y2, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].u_ddrphy_data_slice/data_slice_dqs_gate_cal/dqs_gate_coarse_cal/_N9161
+congestion value : 1, drive info : CLMS_98_173:Q0, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/dcd_wr_tworw
+congestion value : 1, drive info : CLMS_70_169:Q2, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_dfi/phy_addr_d [37]
+congestion value : 1, drive info : CLMA_50_164:Q1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_calib_top/wrlvl_odt
+congestion value : 1, drive info : CLMA_22_176:Q2, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_training_ctrl/ddrphy_rst_req_d1
+congestion value : 1, drive info : CLMA_102_172:Y2, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_dcd_top/mcdq_dcd_bm/mcdq_dcd_rowaddr/_N43730
+congestion value : 1, drive info : CLMA_30_173:Y1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].u_ddrphy_data_slice/data_slice_dqs_gate_cal/dqs_gate_coarse_cal/_N9262
+congestion value : 1, drive info : CLMS_102_145:Q1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_dcd_top/mcdq_dcd_bm/user_addr_d [22]
+congestion value : 1, drive info : CLMS_66_169:Y0, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_dcp_top/mcdq_dcp_buf/fifo_rdata_a_comb [23]
+congestion value : 1, drive info : DRM_142_148:QB0[3], design net name : ddr_mbus_wdata1[55]
+congestion value : 1, drive info : CLMA_138_172:Y3, design net name : DDR3_Interface_Inst/DDR_Arbitration_WR_Ctrl_Inst/_N9564
+congestion value : 1, drive info : CLMS_70_173:Y2, design net name : DDR3_Interface_Inst/DDR3_Inst/dfi_address [37]
+congestion value : 1, drive info : CLMS_22_169:Q2, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].u_ddrphy_data_slice/data_slice_wrlvl/vld_init_cnt [7]
+congestion value : 1, drive info : CLMA_110_148:Q1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_ui_axi/old_row_addr_array[7] [9]
+congestion value : 1, drive info : CLMA_66_172:Q3, design net name : DDR3_Interface_Inst/DDR3_Inst/dfi_address [35]
+congestion value : 1, drive info : CLMS_150_169:Y2, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst1/_N7026
+congestion value : 1, drive info : CLMS_34_153:Y2, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_calib_top/rdcal/_N47894
+congestion value : 1, drive info : CLMA_46_164:Q3, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_calib_top/ddrphy_wrlvl/wrlvl_dqs_resp_r
+congestion value : 1, drive info : CLMA_30_141:Q1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_calib_top/rdcal/ref_cnt_done
+congestion value : 1, drive info : CLMA_46_156:Q1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_calib_top/rdcal_odt
+congestion value : 1, drive info : CLMA_74_156:Y1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_dcp_top/mcdq_dcp_buf/cmd_act2rd
+congestion value : 1, drive info : CLMA_62_156:Q2, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_dcp_top/mcdq_dcp_back_ctrl/back_rdata_d1 [22]
+congestion value : 1, drive info : CLMS_74_105:Q2, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_dcp_top/mcdq_dcp_back_ctrl/PRE_PASS_LOOP[4].timing_pre_pass/timing_cnt2 [2]
+congestion value : 1, drive info : CLMS_66_165:Q3, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_dcp_top/back_rdata [23]
+congestion value : 1, drive info : CLMA_62_164:Q3, design net name : DDR3_Interface_Inst/DDR3_Inst/dfi_address [7]
+congestion value : 1, drive info : CLMA_138_181:Y0, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst2/FIFO_16x4096x128_Inst/U_ipml_fifo_FIFO_16x4096x128/U_ipml_fifo_ctrl/N2 [8]
+congestion value : 1, drive info : CLMA_138_185:Y0, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst2/FIFO_16x4096x128_Inst/U_ipml_fifo_FIFO_16x4096x128/U_ipml_fifo_ctrl/N2 [12]
+congestion value : 1, drive info : CLMA_30_125:Q3, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].u_ddrphy_data_slice/dqsi_rdel_cal/rdel_ctrl [0]
+congestion value : 1, drive info : CLMA_62_168:Q1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/norm_cmd_l [4]
+congestion value : 1, drive info : CLMS_74_177:Q0, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_wdatapath/ipsxb_distributed_fifo/u_ipsxb_distributed_fifo_distributed_fifo_v1_0/rd_addr [3]
+congestion value : 1, drive info : CLMS_98_169:Q3, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_ui_axi/u_user_cmd_fifo/data_1 [46]
+congestion value : 1, drive info : CLMS_146_153:Q0, design net name : ddr_mbus_waddr0[12]
+congestion value : 1, drive info : CLMS_34_177:Q1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].u_ddrphy_data_slice/data_slice_dqs_gate_cal/dqs_gate_coarse_cal/dqs_gate_pulse_r2 [3]
+congestion value : 1, drive info : CLMA_30_129:Q1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].u_ddrphy_data_slice/dqsi_rdel_cal/state_reg [11]
+congestion value : 1, drive info : CLMS_46_169:Q1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_calib_top/ddrphy_wrlvl/wrlvl_state_reg [1]
+congestion value : 1, drive info : CLMA_110_144:Q0, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_dcd_top/dec_addr [24]
+congestion value : 1, drive info : CLMA_30_124:Q3, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].u_ddrphy_data_slice/dqsi_rdel_cal/state_reg [1]
+congestion value : 1, drive info : CLMA_62_160:Q3, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/norm_addr_m [6]
+congestion value : 1, drive info : CLMA_138_177:Y0, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst2/FIFO_16x4096x128_Inst/U_ipml_fifo_FIFO_16x4096x128/U_ipml_fifo_ctrl/N2 [4]
+congestion value : 1, drive info : CLMS_38_149:Y1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_calib_top/rdcal/N238
+congestion value : 1, drive info : CLMA_110_169:Q1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_ui_axi/u_user_cmd_fifo/data_0 [19]
+congestion value : 1, drive info : CLMA_22_168:Q2, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].u_ddrphy_data_slice/data_slice_wrlvl/cnt [4]
+congestion value : 1, drive info : SRB_96_172:ZQS[4], design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_wdatapath/mcdq_wdp_align/r_wvld_m
+congestion value : 1, drive info : SRB_44_148:ZQN[1], design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/calib_done
+congestion value : 1, drive info : DRM_178_128:QB0[1], design net name : ddr_mbus_wdata1[18]
+congestion value : 1, drive info : CLMS_62_173:Q1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_dcp_top/pipe_req_cmd [1]
+congestion value : 1, drive info : CLMA_78_176:Y1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_dcp_top/mcdq_dcp_buf/A_ipsxb_distributed_fifo/u_ipsxb_distributed_fifo_distributed_fifo_v1_0/u_ipsxb_distributed_fifo_ctr/wgnext [4]
+congestion value : 1, drive info : DRM_234_148:QB0[0], design net name : ddr_mbus_wdata0[11]
+congestion value : 1, drive info : DRM_234_148:QB0[3], design net name : ddr_mbus_wdata0[59]
+congestion value : 1, drive info : CLMA_134_180:Q0, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst2/FIFO_16x4096x128_Inst/U_ipml_fifo_FIFO_16x4096x128/U_ipml_fifo_ctrl/wfull
+congestion value : 1, drive info : CLMA_94_104:Y0, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_dcp_top/mcdq_dcp_back_ctrl/N214
+congestion value : 1, drive info : CLMA_90_140:Q1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_dcp_top/mcdq_dcp_back_ctrl/req_rdata [39]
+congestion value : 1, drive info : CLMA_30_172:Q1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/phy_wrdata_mask [4]
+congestion value : 1, drive info : CLMA_34_136:Q0, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/rdel_calibration
+congestion value : 1, drive info : CLMA_94_144:Q1, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ipsxb_ddrc_top/mcdq_dcp_top/mcdq_dcp_buf/B_ipsxb_distributed_fifo/u_ipsxb_distributed_fifo_distributed_fifo_v1_0/rd_addr [1]
+congestion value : 1, drive info : CLMA_146_172:Q1, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst1/fifo_rd_rst
+congestion value : 1, drive info : CLMA_110_192:Q2, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst3/FIFO_16x4096x128_Inst/U_ipml_fifo_FIFO_16x4096x128/rd_addr [2]

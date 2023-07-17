@@ -1,0 +1,180 @@
+Design Summary : Some Constraints Violated.
+
+Setup Summary(Slow Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Launch Clock           Capture Clock              WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ System_Clock           System_Clock                14.616       0.000              0            363
+ ddrphy_clkin           System_Clock                 1.511       0.000              0             44
+ pixel_clock1           pixel_clock1                 1.668       0.000              0           1185
+ ddrphy_clkin           pixel_clock1                -9.975    -352.487             36             36
+ System_Clock           pixel_clock1                -3.151    -137.849            100            100
+ ioclk1                 ioclk1                       1.692       0.000              0             48
+ ddrphy_clkin           ddrphy_clkin                -0.403      -1.289              9          13511
+ System_Clock           ddrphy_clkin                10.076       0.000              0            705
+ pixel_clock1           ddrphy_clkin                 6.131       0.000              0             38
+ cmos1_pclk             cmos1_pclk                   8.818       0.000              0             65
+ cmos1_pclk_16bit       cmos1_pclk_16bit            17.202       0.000              0            832
+ ddrphy_clkin|Config_HDMI_Inst/u_pll_e3/CLKOUT0_Inferred
+                        ddrphy_clkin|Config_HDMI_Inst/u_pll_e3/CLKOUT0_Inferred
+                                                    94.653       0.000              0           1105
+ System_Clock|u_pll/u_pll_e3/CLKOUT0_Inferred
+                        System_Clock|u_pll/u_pll_e3/CLKOUT0_Inferred
+                                                    36.450       0.000              0             31
+ System_Clock           System_Clock|u_pll/u_pll_e3/CLKOUT0_Inferred
+                                                    19.336       0.000              0              7
+====================================================================================================
+
+Hold Summary(Slow Corner):
+****************************************************************************************************
+                                                                          THS Failing      THS Total
+ Launch Clock           Capture Clock              WHS(ns)     THS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ System_Clock           System_Clock                 0.222       0.000              0            363
+ ddrphy_clkin           System_Clock                 4.754       0.000              0             44
+ pixel_clock1           pixel_clock1                 0.258       0.000              0           1185
+ ddrphy_clkin           pixel_clock1                 7.945       0.000              0             36
+ System_Clock           pixel_clock1                -1.464     -60.240             98            100
+ ioclk1                 ioclk1                       0.450       0.000              0             48
+ ddrphy_clkin           ddrphy_clkin                -4.083    -863.006            845          13511
+ System_Clock           ddrphy_clkin                -9.497   -3950.426            705            705
+ pixel_clock1           ddrphy_clkin                -8.908    -332.405             38             38
+ cmos1_pclk             cmos1_pclk                   0.111       0.000              0             65
+ cmos1_pclk_16bit       cmos1_pclk_16bit             0.055       0.000              0            832
+ ddrphy_clkin|Config_HDMI_Inst/u_pll_e3/CLKOUT0_Inferred
+                        ddrphy_clkin|Config_HDMI_Inst/u_pll_e3/CLKOUT0_Inferred
+                                                     0.187       0.000              0           1105
+ System_Clock|u_pll/u_pll_e3/CLKOUT0_Inferred
+                        System_Clock|u_pll/u_pll_e3/CLKOUT0_Inferred
+                                                     0.427       0.000              0             31
+ System_Clock           System_Clock|u_pll/u_pll_e3/CLKOUT0_Inferred
+                                                    -0.731      -4.357              7              7
+====================================================================================================
+
+Recovery Summary(Slow Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Launch Clock           Capture Clock              WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ System_Clock           System_Clock                15.166       0.000              0             64
+ pixel_clock1           pixel_clock1                 2.785       0.000              0            183
+ System_Clock           ddrphy_clkin                 8.948       0.000              0           1430
+ ddrphy_clkin           ddrphy_clkin                 4.251       0.000              0           1660
+ cmos1_pclk_16bit       cmos1_pclk_16bit            19.767       0.000              0            122
+ ddrphy_clkin|Config_HDMI_Inst/u_pll_e3/CLKOUT0_Inferred
+                        ddrphy_clkin|Config_HDMI_Inst/u_pll_e3/CLKOUT0_Inferred
+                                                    98.058       0.000              0              1
+====================================================================================================
+
+Removal Summary(Slow Corner):
+****************************************************************************************************
+                                                                          THS Failing      THS Total
+ Launch Clock           Capture Clock              WHS(ns)     THS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ System_Clock           System_Clock                 0.731       0.000              0             64
+ pixel_clock1           pixel_clock1                 1.011       0.000              0            183
+ System_Clock           ddrphy_clkin                -4.790   -4156.982           1430           1430
+ ddrphy_clkin           ddrphy_clkin                 0.256       0.000              0           1660
+ cmos1_pclk_16bit       cmos1_pclk_16bit             0.776       0.000              0            122
+ ddrphy_clkin|Config_HDMI_Inst/u_pll_e3/CLKOUT0_Inferred
+                        ddrphy_clkin|Config_HDMI_Inst/u_pll_e3/CLKOUT0_Inferred
+                                                     1.103       0.000              0              1
+====================================================================================================
+
+Minimum Pulse Width Summary(Slow Corner):
+****************************************************************************************************
+                                                                         WPWS Failing     WPWS Total
+ Clock                                            WPWS(ns)    TPWS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+
+Setup Summary(Fast Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Launch Clock           Capture Clock              WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ System_Clock           System_Clock                16.183       0.000              0            363
+ ddrphy_clkin           System_Clock                 4.352       0.000              0             44
+ pixel_clock1           pixel_clock1                 3.000       0.000              0           1185
+ ddrphy_clkin           pixel_clock1                -6.289    -221.933             36             36
+ System_Clock           pixel_clock1                -2.485    -125.966            100            100
+ ioclk1                 ioclk1                       1.834       0.000              0             48
+ ddrphy_clkin           ddrphy_clkin                 2.845       0.000              0          13511
+ System_Clock           ddrphy_clkin                 9.433       0.000              0            705
+ pixel_clock1           ddrphy_clkin                 3.680       0.000              0             38
+ cmos1_pclk             cmos1_pclk                   9.642       0.000              0             65
+ cmos1_pclk_16bit       cmos1_pclk_16bit            19.069       0.000              0            832
+ ddrphy_clkin|Config_HDMI_Inst/u_pll_e3/CLKOUT0_Inferred
+                        ddrphy_clkin|Config_HDMI_Inst/u_pll_e3/CLKOUT0_Inferred
+                                                    96.251       0.000              0           1105
+ System_Clock|u_pll/u_pll_e3/CLKOUT0_Inferred
+                        System_Clock|u_pll/u_pll_e3/CLKOUT0_Inferred
+                                                    37.485       0.000              0             31
+ System_Clock           System_Clock|u_pll/u_pll_e3/CLKOUT0_Inferred
+                                                    19.300       0.000              0              7
+====================================================================================================
+
+Hold Summary(Fast Corner):
+****************************************************************************************************
+                                                                          THS Failing      THS Total
+ Launch Clock           Capture Clock              WHS(ns)     THS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ System_Clock           System_Clock                 0.211       0.000              0            363
+ ddrphy_clkin           System_Clock                 3.079       0.000              0             44
+ pixel_clock1           pixel_clock1                 0.195       0.000              0           1185
+ ddrphy_clkin           pixel_clock1                 5.036       0.000              0             36
+ System_Clock           pixel_clock1                -0.566      -8.027             33            100
+ ioclk1                 ioclk1                       0.383       0.000              0             48
+ ddrphy_clkin           ddrphy_clkin                -2.518    -452.942            685          13511
+ System_Clock           ddrphy_clkin                -5.669   -2313.445            705            705
+ pixel_clock1           ddrphy_clkin                -5.626    -210.063             38             38
+ cmos1_pclk             cmos1_pclk                   0.039       0.000              0             65
+ cmos1_pclk_16bit       cmos1_pclk_16bit            -0.003      -0.003              1            832
+ ddrphy_clkin|Config_HDMI_Inst/u_pll_e3/CLKOUT0_Inferred
+                        ddrphy_clkin|Config_HDMI_Inst/u_pll_e3/CLKOUT0_Inferred
+                                                     0.132       0.000              0           1105
+ System_Clock|u_pll/u_pll_e3/CLKOUT0_Inferred
+                        System_Clock|u_pll/u_pll_e3/CLKOUT0_Inferred
+                                                     0.334       0.000              0             31
+ System_Clock           System_Clock|u_pll/u_pll_e3/CLKOUT0_Inferred
+                                                    -0.273      -1.196              7              7
+====================================================================================================
+
+Recovery Summary(Fast Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Launch Clock           Capture Clock              WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ System_Clock           System_Clock                16.489       0.000              0             64
+ pixel_clock1           pixel_clock1                 3.952       0.000              0            183
+ System_Clock           ddrphy_clkin                 8.759       0.000              0           1430
+ ddrphy_clkin           ddrphy_clkin                 5.974       0.000              0           1660
+ cmos1_pclk_16bit       cmos1_pclk_16bit            20.862       0.000              0            122
+ ddrphy_clkin|Config_HDMI_Inst/u_pll_e3/CLKOUT0_Inferred
+                        ddrphy_clkin|Config_HDMI_Inst/u_pll_e3/CLKOUT0_Inferred
+                                                    98.556       0.000              0              1
+====================================================================================================
+
+Removal Summary(Fast Corner):
+****************************************************************************************************
+                                                                          THS Failing      THS Total
+ Launch Clock           Capture Clock              WHS(ns)     THS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ System_Clock           System_Clock                 0.533       0.000              0             64
+ pixel_clock1           pixel_clock1                 0.736       0.000              0            183
+ System_Clock           ddrphy_clkin                -3.053   -2461.145           1430           1430
+ ddrphy_clkin           ddrphy_clkin                 0.184       0.000              0           1660
+ cmos1_pclk_16bit       cmos1_pclk_16bit             0.533       0.000              0            122
+ ddrphy_clkin|Config_HDMI_Inst/u_pll_e3/CLKOUT0_Inferred
+                        ddrphy_clkin|Config_HDMI_Inst/u_pll_e3/CLKOUT0_Inferred
+                                                     0.771       0.000              0              1
+====================================================================================================
+
+Minimum Pulse Width Summary(Fast Corner):
+****************************************************************************************************
+                                                                         WPWS Failing     WPWS Total
+ Clock                                            WPWS(ns)    TPWS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+

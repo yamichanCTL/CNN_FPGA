@@ -1,0 +1,2 @@
+congestion value : 1, drive info : CLMA_118_168:Y2, design net name : _N640
+congestion value : 1, drive info : SRB_132_180:ZQS[5], design net name : DDR3_Interface_Inst/axi_wready

@@ -1,0 +1,4 @@
+congestion value : 2, drive info : SRB_132_180:ZQS[5], design net name : DDR3_Interface_Inst/axi_wready
+congestion value : 1, drive info : CLMA_118_168:Y2, design net name : _N640
+congestion value : 1, drive info : CLMS_150_181:Q1, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst2/state_current_reg [2]
+congestion value : 1, drive info : CLMA_146_172:Q3, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst0/mbus_wbusy_i [0]

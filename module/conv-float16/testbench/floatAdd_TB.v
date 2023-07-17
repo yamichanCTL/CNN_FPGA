@@ -21,7 +21,7 @@ initial begin
 	$stop;
 end
 
-floatAdd FADD
+floatAdd16 FADD
 (
 	.floatA(floatA),
 	.floatB(floatB),

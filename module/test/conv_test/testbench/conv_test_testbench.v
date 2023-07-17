@@ -9,10 +9,11 @@ module conv_top_tb();
     parameter padding_enable = 0;
     parameter padding = 0;
     parameter stride = 1;
-    parameter bitwidth = 7;
+    parameter bitwidth = 4;
     parameter result_width = (img_width-weight_width+2*padding)/stride+1;
     parameter result_height = (img_height-weight_height+2*padding)/stride+1;
     parameter bitsum = result_width*result_width*bitwidth  ;
+    parameter expand = 1;
 
 reg clk_en;
 reg reset_n;
@@ -22,14 +23,14 @@ reg [img_width*img_height*bitwidth-1:0] img;
 reg [weight_width*weight_height*bitwidth-1:0] weight;
 reg [bitwidth-1:0]       bias;
 
-wire [result_width*result_height*bitwidth-1:0] result;
+wire [2*result_width*result_height*bitwidth-1:0] result;
 wire conv_fin;
 
 initial begin
-    img=48'b010_100_110_101_010_001_111_110_010_110_000_010_001_100_010_011;
-    weight = 12'b001_000_000_001;
+    img=64'h1111_1111_1111_1111;
+    weight = 16'h1111;
     //weight  =  27'b001_000_000_000_001_000_000_000_001;
-    bias = 3'b101;
+    bias = 4'h1;
 end
 /*
 3 2 4 1
@@ -63,19 +64,19 @@ initial begin
     #700 conv_en=0;
 end
 conv_top #(
-    weight_width,
-    weight_height,
-    img_width,
-    img_height,
-    padding_enable,
-    padding,
-    stride,
-    bitwidth,
-    result_width,
-    result_height,
-    expand
-) 
-inst(
+    .weight_width(weight_width),
+    .weight_height(weight_height),
+    .img_width(img_width),
+    .img_height(img_height),
+    .padding_enable(padding_enable),
+    .padding(padding),
+
+    .stride(stride),
+    .bitwidth(bitwidth),
+    .result_width(result_width),
+    .result_height(result_height),
+    .expand(expand)
+) inst(
     .clk_en     (clk_en),
     .rst_n      (reset_n),
     .conv_en    (conv_en),

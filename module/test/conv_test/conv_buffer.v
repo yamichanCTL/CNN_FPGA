@@ -19,13 +19,13 @@ module conv_buffer #(
     input conv_on,
     
     input [31:0] anchor_l,
-    input [31:0] anchor_c,// 定位坐标，用于定位待卷积数据的输入起始位置
+    input [31:0] anchor_c,
 
     input [3:0] buf_l,
-    input [3:0] buf_c,//缓冲区数据检索地址
+    input [3:0] buf_c,
 
-    input [img_width*img_height*bitwidth-1:0]  img,         //
-    input [weight_width*weight_height*bitwidth-1:0] weight,//
+    input [img_width*img_height*bitwidth-1:0]  img,         //图像
+    input [weight_width*weight_height*bitwidth-1:0] weight,//权重
 
     output [bitwidth-1:0] img_cal,
     output [bitwidth-1:0] wei_cal

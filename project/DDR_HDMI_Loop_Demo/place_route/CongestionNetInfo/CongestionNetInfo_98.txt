@@ -1,0 +1,7 @@
+congestion value : 5, drive info : CLMA_174_176:Q3, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst0/FIFO_16x4096x128_Inst/U_ipml_fifo_FIFO_16x4096x128/U_ipml_fifo_ctrl/wfull
+congestion value : 1, drive info : CLMS_174_165:Q0, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst0/FIFO_16x4096x128_Inst/U_ipml_fifo_FIFO_16x4096x128/U_ipml_fifo_ctrl/wrptr2 [4]
+congestion value : 1, drive info : CLMS_14_193:Q3, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_slice_top/dqs_read_valid [1]
+congestion value : 1, drive info : CLMA_174_172:Q3, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst0/FIFO_16x4096x128_Inst/U_ipml_fifo_FIFO_16x4096x128/U_ipml_fifo_ctrl/wrptr2 [5]
+congestion value : 1, drive info : CLMA_18_184:Q3, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].u_ddrphy_data_slice/read_data_valid
+congestion value : 1, drive info : CLMS_10_193:Y0, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].u_ddrphy_data_slice/data_slice_wrlvl/N279
+congestion value : 1, drive info : CLMS_18_193:Q0, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].u_ddrphy_data_slice/gate_check

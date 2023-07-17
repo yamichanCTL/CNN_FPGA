@@ -1,0 +1,77 @@
+##### Written on 2023/05/11 15:16:20 ###############################
+
+
+##### DESIGN INFO ##################################################
+
+Top Module:
+	DDR_HDMI_Loop_Demo
+
+Constraint File(s):
+	C:/Users/ThinkPad/Desktop/50H/DDR_HDMI_Loop_Demo/DDR_HDMI_Loop_Demo.fdc
+	
+
+##### SUMMARY ######################################################
+
+Found 0 error(s), 0 critical warning(s), 11 warning(s), out of 828 constraint(s)
+
+
+Inapplicable constraints(except overwritten constraints):
+********************************************
+
+
+
+
+
+
+Constraints with issues:
+********************************************
+
+
+
+define_attribue {i_hdmi1_clk} {PAP_IO_LOC} {AA12}
+	W: ConstraintEditor-2002: [C:/Users/ThinkPad/Desktop/50H/DDR_HDMI_Loop_Demo/DDR_HDMI_Loop_Demo.fdc(line number: 213)] | Port i_hdmi1_clk has been placed at location AA12, whose type is share pin.
+
+define_attribue {i_hdmi1_data[10]} {PAP_IO_LOC} {W18}
+	W: ConstraintEditor-2002: [C:/Users/ThinkPad/Desktop/50H/DDR_HDMI_Loop_Demo/DDR_HDMI_Loop_Demo.fdc(line number: 195)] | Port i_hdmi1_data[10] has been placed at location W18, whose type is share pin.
+
+define_attribue {i_hdmi1_data[11]} {PAP_IO_LOC} {AB19}
+	W: ConstraintEditor-2002: [C:/Users/ThinkPad/Desktop/50H/DDR_HDMI_Loop_Demo/DDR_HDMI_Loop_Demo.fdc(line number: 191)] | Port i_hdmi1_data[11] has been placed at location AB19, whose type is share pin.
+
+define_attribue {i_hdmi1_data[12]} {PAP_IO_LOC} {AA18}
+	W: ConstraintEditor-2002: [C:/Users/ThinkPad/Desktop/50H/DDR_HDMI_Loop_Demo/DDR_HDMI_Loop_Demo.fdc(line number: 187)] | Port i_hdmi1_data[12] has been placed at location AA18, whose type is share pin.
+
+define_attribue {i_hdmi1_data[13]} {PAP_IO_LOC} {AB18}
+	W: ConstraintEditor-2002: [C:/Users/ThinkPad/Desktop/50H/DDR_HDMI_Loop_Demo/DDR_HDMI_Loop_Demo.fdc(line number: 183)] | Port i_hdmi1_data[13] has been placed at location AB18, whose type is share pin.
+
+define_attribue {i_hdmi1_data[9]} {PAP_IO_LOC} {V17}
+	W: ConstraintEditor-2002: [C:/Users/ThinkPad/Desktop/50H/DDR_HDMI_Loop_Demo/DDR_HDMI_Loop_Demo.fdc(line number: 199)] | Port i_hdmi1_data[9] has been placed at location V17, whose type is share pin.
+
+define_attribue {i_rstn} {PAP_IO_LOC} {K18}
+	W: ConstraintEditor-2002: [C:/Users/ThinkPad/Desktop/50H/DDR_HDMI_Loop_Demo/DDR_HDMI_Loop_Demo.fdc(line number: 5)] | Port i_rstn has been placed at location K18, whose type is share pin.
+
+define_attribue {io_hdmi1_sda} {PAP_IO_LOC} {V20}
+	W: ConstraintEditor-2002: [C:/Users/ThinkPad/Desktop/50H/DDR_HDMI_Loop_Demo/DDR_HDMI_Loop_Demo.fdc(line number: 207)] | Port io_hdmi1_sda has been placed at location V20, whose type is share pin.
+
+define_attribue {o_ddr3_dq[11]} {PAP_IO_LOC} {M1}
+	W: ConstraintEditor-2002: [C:/Users/ThinkPad/Desktop/50H/DDR_HDMI_Loop_Demo/DDR_HDMI_Loop_Demo.fdc(line number: 652)] | Port o_ddr3_dq[11] has been placed at location M1, whose type is share pin.
+
+define_attribue {o_ddr3_dq[14]} {PAP_IO_LOC} {P3}
+	W: ConstraintEditor-2002: [C:/Users/ThinkPad/Desktop/50H/DDR_HDMI_Loop_Demo/DDR_HDMI_Loop_Demo.fdc(line number: 631)] | Port o_ddr3_dq[14] has been placed at location P3, whose type is share pin.
+
+define_attribue {o_ddr3_dq[9]} {PAP_IO_LOC} {M2}
+	W: ConstraintEditor-2002: [C:/Users/ThinkPad/Desktop/50H/DDR_HDMI_Loop_Demo/DDR_HDMI_Loop_Demo.fdc(line number: 666)] | Port o_ddr3_dq[9] has been placed at location M2, whose type is share pin.
+
+
+
+
+
+
+
+
+Constraints with matching wildcard expressions:
+********************************************
+
+
+
+
+

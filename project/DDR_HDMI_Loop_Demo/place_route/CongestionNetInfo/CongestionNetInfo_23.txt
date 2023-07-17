@@ -1,0 +1,7 @@
+congestion value : 2, drive info : CLMA_46_168:Y3, design net name : DDR3_Interface_Inst/DDR3_Inst/u_ddrphy_top/ddrphy_calib_top/ddrphy_wrlvl/dbg_wrlvl [2]
+congestion value : 2, drive info : CLMA_150_176:Q3, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst2/video_vsync_i [2]
+congestion value : 1, drive info : CLMA_150_172:Y2, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst3/N50
+congestion value : 1, drive info : SRB_164_176:ZQW[5], design net name : nt_ctrl_led[1]
+congestion value : 1, drive info : CLMA_138_173:Q2, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst2/FIFO_16x4096x128_Inst/U_ipml_fifo_FIFO_16x4096x128/wr_addr [2]
+congestion value : 1, drive info : CLMA_138_177:Q0, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst2/FIFO_16x4096x128_Inst/U_ipml_fifo_FIFO_16x4096x128/wr_addr [4]
+congestion value : 1, drive info : CLMA_138_181:Q2, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst2/FIFO_16x4096x128_Inst/U_ipml_fifo_FIFO_16x4096x128/wr_addr [10]

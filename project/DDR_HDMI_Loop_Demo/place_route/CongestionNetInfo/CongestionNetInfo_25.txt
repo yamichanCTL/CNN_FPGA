@@ -1,0 +1,9 @@
+congestion value : 2, drive info : SRB_132_180:ZQS[5], design net name : DDR3_Interface_Inst/axi_wready
+congestion value : 2, drive info : CLMA_154_172:Q2, design net name : Image_Process_Interface_Inst/video2_vsync_valid
+congestion value : 2, drive info : CLMA_134_176:Q0, design net name : DDR3_Interface_Inst/DDR_Arbitration_WR_Ctrl_Inst/DDR_WR_Ctrl_Inst/mbus_wdata_rq_o
+congestion value : 1, drive info : CLMA_154_177:Y2, design net name : Image_Process_Interface_Inst/Frame_RD_Interface_Inst/N35
+congestion value : 1, drive info : CLMS_150_181:Q3, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst3/state_current_reg [2]
+congestion value : 1, drive info : CLMS_118_169:Q3, design net name : DDR3_Interface_Inst/DDR_Arbitration_WR_Ctrl_Inst/DDR_WR_Ctrl_Inst/send_cnt [3]
+congestion value : 1, drive info : SRB_164_176:ZQW[5], design net name : nt_ctrl_led[1]
+congestion value : 1, drive info : CLMS_146_181:Y1, design net name : DDR3_Interface_Inst/DDR_Arbitration_WR_Ctrl_Inst/_N47345
+congestion value : 1, drive info : CLMS_150_173:Y2, design net name : DDR3_Interface_Inst/DDR_Arbitration_WR_Ctrl_Inst/_N9455

@@ -12,7 +12,7 @@ module conv_top #(
     parameter bitwidth = 3,             
     parameter result_width = (img_width-weight_width+2*padding)/stride+1,       
     parameter result_height = (img_height-weight_height+2*padding)/stride+1,     
-    parameter expand = 2        //expand the bitwidth of result 
+    parameter expand = 1        //expand the bitwidth of result 
     
 )(
     input clk_en,
@@ -23,7 +23,7 @@ module conv_top #(
     input [weight_width*weight_height*bitwidth-1:0] weight, 
     input [bitwidth-1:0] bias,                              
 
-    output [expand*result_width*result_height*bitwidth-1:0]  result,  
+    output [expand*2*result_width*result_height*bitwidth-1:0]  result,  
     output conv_fin //if 1, the result of the conv is correct
 );
 
@@ -31,7 +31,7 @@ module conv_top #(
 //the addr of the buff
 wire [31:0] anchor_l;   //the addr of the top left point
 wire [31:0] anchor_c;
-wire [3:0]  buf_l;      //the addr of the buffer
+wire [3:0]  buf_l;      //the addr of the buf
 wire [3:0]  buf_c;
 wire [3:0] rlt_l;       //the addr of the result arrays
 wire [3:0] rlt_c;

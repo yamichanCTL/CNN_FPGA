@@ -5,12 +5,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	convBuffer_TB
 
-} {} {}} G:/project/IC/CICC2023/CNN_FPGA/module/CNN/conv_buffer.v {1 {vlog -work work -stats=none G:/project/IC/CICC2023/CNN_FPGA/module/CNN/conv_buffer.v
+} {} {}} G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/floatMult_TB.v {1 {vlog -work work -stats=none G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/floatMult_TB.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module conv_buffer
+-- Compiling module floatMult_TB
 
 Top level modules:
-	conv_buffer
+	floatMult_TB
 
 } {} {}} G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/floatAdd16.v {1 {vlog -work work -stats=none G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/floatAdd16.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -26,26 +26,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	floatMult16
 
-} {} {}} G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/test.v {1 {vlog -work work -stats=none G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/test.v
+} {} {}} G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convTop.v {1 {vlog -work work -stats=none G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convTop.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module test
+-- Compiling module conv_top
 
 Top level modules:
-	test
+	conv_top
 
-} {} {}} G:/project/IC/CICC2023/CNN_FPGA/module/CNN/tb/conv_buffer_tb.v {1 {vlog -work work -stats=none G:/project/IC/CICC2023/CNN_FPGA/module/CNN/tb/conv_buffer_tb.v
+} {} {}} G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/convTop_TB.v {1 {vlog -work work -stats=none G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/convTop_TB.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module conv_buffer_tb
+-- Compiling module convTop_TB
 
 Top level modules:
-	conv_buffer_tb
-
-} {} {}} G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/test_TB.v {1 {vlog -work work -stats=none G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/test_TB.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module test_TB
-
-Top level modules:
-	test_TB
+	convTop_TB
 
 } {} {}} G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/processingElement16.v {1 {vlog -work work -stats=none G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/processingElement16.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -54,12 +47,26 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	processingElement16
 
+} {} {}} G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convUnit.v {1 {vlog -work work -stats=none G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convUnit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module convUnit
+
+Top level modules:
+	convUnit
+
 } {} {}} G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convBuffer.v {1 {vlog -work work -stats=none G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/convBuffer.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module convBuffer
 
 Top level modules:
 	convBuffer
+
+} {} {}} G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/conv_controller.v {1 {vlog -work work -stats=none G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/conv_controller.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module conv_controller
+
+Top level modules:
+	conv_controller
 
 } {} {}} G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/convUnit_TB.v {1 {vlog -work work -stats=none G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/convUnit_TB.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -68,18 +75,18 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	convUnit_TB
 
-} {} {}} G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/read_bin.v {1 {vlog -work work -stats=none G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/read_bin.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module read_bin_file
-
-Top level modules:
-	read_bin_file
-
 } {} {}} G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/processingElement_TB.v {1 {vlog -work work -stats=none G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/processingElement_TB.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module processingElement_TB
 
 Top level modules:
 	processingElement_TB
+
+} {} {}} G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/floatAdd_TB.v {1 {vlog -work work -stats=none G:/project/IC/CICC2023/CNN_FPGA/module/conv-float16/testbench/floatAdd_TB.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module floatAdd_TB
+
+Top level modules:
+	floatAdd_TB
 
 } {} {}}

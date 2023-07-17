@@ -1,0 +1,2 @@
+congestion value : 9, drive info : CLMA_146_172:Q0, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst0/fifo_rd_rst
+congestion value : 1, drive info : CLMA_170_180:Y1, design net name : Image_Process_Interface_Inst/Frame_WR_Interface_Inst0/FIFO_16x4096x128_Inst/U_ipml_fifo_FIFO_16x4096x128/U_ipml_fifo_ctrl/rwptr2_b [6]

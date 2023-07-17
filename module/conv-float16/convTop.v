@@ -1,12 +1,12 @@
 module conv_top #(
-    parameter data_width = 3,   
-    parameter input_channel = 2,
+    parameter data_width = 8,   
+    parameter input_channel = 1,
     parameter output_channel = 1,
 
-    parameter image_width = 4,            
-    parameter image_length = 4,  
-    parameter weight_width = 2,        
-    parameter weight_length = 2,        
+    parameter image_width = 160,            
+    parameter image_length = 160,  
+    parameter weight_width = 5,        
+    parameter weight_length = 5,        
 
     parameter stride = 2,  
     parameter padding_en = 0,      
